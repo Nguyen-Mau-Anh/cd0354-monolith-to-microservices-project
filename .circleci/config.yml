@@ -25,16 +25,16 @@ jobs:
             docker build -t udagram-api-feed ./udagram-api-feed
             docker tag udagram-api-feed twashorus125/udagram-api-feed
 
-            echo "build for udagram-api-frontend"
-            docker build -t udagram-api-frontend ./udagram-api-frontend
-            docker tag udagram-api-frontend twashorus125/udagram-api-frontend
+            echo "build for udagram-frontend"
+            docker build -t udagram-frontend ./udagram-frontend
+            docker tag udagram-frontend twashorus125/udagram-frontend
 
             echo "Login Docker with $DOCKERHUB_EMAIL and $DOCKERHUB_PASS"
             docker login -u $DOCKERHUB_EMAIL -p $DOCKERHUB_PASS
             docker push twashorus125/reverseproxy
             docker push twashorus125/udagram-api-user
             docker push twashorus125/udagram-api-feed
-            docker push twashorus125/udagram-api-frontend
+            docker push twashorus125/udagram-frontend
 workflows:
   default:
     jobs:
