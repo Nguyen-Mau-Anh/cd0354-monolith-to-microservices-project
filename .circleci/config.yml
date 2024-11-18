@@ -8,7 +8,8 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: Build Docker
+      - run: 
+        name: Build Docker
         command: |
           echo "build for reverseproxy"
           docker build -t reverseproxy ./reverseproxy
