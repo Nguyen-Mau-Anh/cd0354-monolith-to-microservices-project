@@ -26,8 +26,8 @@ jobs:
           docker build -t udagram-api-frontend ./udagram-api-frontend
           docker tag udagram-api-frontend twashorus125/udagram-api-frontend
 
-      - run: Push to Docker Hub
-        command: |
+      # - run: Push to Docker Hub
+      #   command: |
           echo "Login Docker with $DOCKERHUB_EMAIL and $DOCKERHUB_PASS"
           docker login -u $DOCKERHUB_EMAIL -p $DOCKERHUB_PASS
           docker push twashorus125/reverseproxy
